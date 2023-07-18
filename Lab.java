@@ -4,33 +4,37 @@ public class Lab {
         p1.Attack();
         p1.Defend();
         p1.Spell("WaterGun");
-        p1.Eweapon();
+        p1.UseWeapon();
     }
 }
-interface Character{
+
+interface Character {
     void Attack();
     void Defend();
 }
-interface Mage{
+
+interface Mage {
     void Spell(String spell);
 }
-interface Warrior{
-    void Eweapon();
+
+interface Warrior {
+    void UseWeapon();
 }
 
-class Player implements Character, Mage, Warrior{
-    public void Attack(){
-        System.out.println("Player attack");
-    }
-    public void Defend(){
-        System.out.println("Player defend");
+class Player implements Character, Mage, Warrior {
+    public void Attack() {
+        System.out.println("The player attack the enemy.");
     }
 
-    public void Spell(String spell){
-        System.out.println("Player use "+spell);
+    public void Defend() {
+        System.out.println("The player defend against the enemy's attack.");
     }
 
-    public void Eweapon(){
-        System.out.println("Player equip weapon");
+    public void Spell(String spell) {
+        System.out.println("The player cast "+spell);
+    }
+
+    public void UseWeapon() {
+        System.out.println("The player Use a weapon to attack.");
     }
 }
